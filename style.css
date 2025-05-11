@@ -20,9 +20,16 @@ body {
   border: 18px solid #E8CA8A;
   background-color: #983215;  
 
+  /* background-image: url(Group\ 4\ \(1\).png);
+  background-repeat: no-repeat;
+  background-position: center top; 
+  background-size: cover; */
 }
 
 
+.card__chess .card {
+  border: 10px solid black;
+}
 
 .main {
   
@@ -95,18 +102,25 @@ body {
 
 .cards {
   display: flex;
+  /* justify-content: space-evenly; */
+  align-items: flex-end;
   gap: 12px;
-  justify-content: space-between;
-  /* flex-wrap: wrap; */
-  align-items: baseline;
+  width: 84%;
+  margin: 0 auto;
+
+/* 
+  background-image: url(Rectangle\ 24.png);
+  background-size: cover;
+  background-repeat: no-repeat; */
+
 }
+
 
 .card {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  height: 286px;
   padding: 12px 18px;
 
   border: 8px solid #983215;
@@ -114,6 +128,25 @@ body {
   background-color: #251E12;
   
 
+}
+
+.card--with-icons {
+  position: relative;
+}
+
+.card__icons {
+  position: absolute;
+  top: -48px;
+  left: 32%;
+  transform: translateX(-50%);
+
+  display: flex;
+  gap: 8px;
+}
+
+.card__icons img {
+  width: 40px;
+  height: auto;
 }
 
 .card__title {
@@ -185,17 +218,18 @@ body {
 
 .card__chessboard {
   display: grid;
-  grid-template-columns: repeat(8, 1fr);
-  grid-template-rows: repeat(8, 1fr);
+  grid-template-columns: repeat(8, 38px);
+  grid-template-rows: repeat(8, 38px);
   background-color: #d2a84d;
-  width: 320px;
-  border-radius: 12px;
+  /* width: 304px; */
+  /* border-radius: 12px; */
   /* margin-bottom: 166px; */
 
   aspect-ratio: 1 / 1;
   overflow: hidden;
-
+  
   flex-shrink: 0;
+  user-select: none;
 }
 
 .chess-cell {
@@ -209,24 +243,12 @@ body {
   
 }
 
-.chess__cells .chess-cell:nth-child(16n+1),
-.chess__cells .chess-cell:nth-child(16n+3),
-.chess__cells .chess-cell:nth-child(16n+5),
-.chess__cells .chess-cell:nth-child(16n+7),
-.chess__cells .chess-cell:nth-child(16n+10),
-.chess__cells .chess-cell:nth-child(16n+12),
-.chess__cells .chess-cell:nth-child(16n+14),
-.chess__cells .chess-cell:nth-child(16n+16) {
-  background-color: #b17a2d;
-}
-
 
 .card__pawn {
   display: flex;
   justify-content: end;
   flex-direction: column;
-  width: 200px;
-  height: 594px;
+  height: 618px;
   font-size: 60px;
 }
 
@@ -285,4 +307,150 @@ body {
 
   background-color: #983215;
   border-radius: 12px;
+}
+
+
+
+.cell {
+  position: relative;
+
+  width: 38px;
+  height: 38px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cell.light {
+  background-color: #E8CA8A;
+}
+
+.cell.dark {
+  background-color: #CA9B41;
+}
+
+.cell img {
+  width: 70%;
+  height: 70%;
+  object-fit: contain;
+
+  cursor: grab;
+}
+
+
+.card__pawn.card {
+  display: flex;
+  flex-direction: column;
+  /* justify-content: space-between; */
+  align-items: center;
+
+  background-color: #1a120a;
+ 
+  color: #e8ca8a;
+  text-align: center;
+}
+
+.slider {
+  position: relative;
+
+  width: 200px;
+  height: 100%;
+
+  overflow: hidden;
+}
+
+.slide {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 300px;
+
+  transition: opacity 0.3s ease;
+}
+
+.slide.active {
+  display: flex;
+}
+
+.slide img {
+  width: 100px;
+  height: auto;
+  /* margin-top: 20px; */
+}
+
+.dots {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  align-items: center;
+  /* margin-top: 12px; */
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  background-color: #ccc;
+  border-radius: 50%;
+
+  cursor: pointer;
+}
+
+.dot.active {
+  background-color: #fff;
+}
+
+
+.news{
+  height: 100vh;
+  padding-right: 18px;
+  padding-left: 18px;
+
+  background-color: #E8CA8A;
+
+}
+
+.marquee {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 8px 0;
+
+  background-color: #E8CA8A; 
+  border-top: 24px solid #983215;
+  border-bottom: 24px solid #983215;
+
+  overflow: hidden;
+}
+
+.marquee__content {
+  display: inline-block;
+  
+  font-size: 100px;
+  font-weight: bold;
+  font-family: "Nikky", sans-serif; 
+  color: #000;
+  
+  white-space: nowrap;
+  animation: scroll-marquee 60s linear infinite;
+
+
+}
+
+@keyframes scroll-marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+
+
+
+
+@media (max-width: 600px) {
+
 }

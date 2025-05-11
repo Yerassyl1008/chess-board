@@ -46,22 +46,29 @@
             <button class="card__button">REGISTER TO EVENT</button>
           </div>
   
-          <div class="card">
-            <h2 class="card__title">PLAY 2x2 <br > Chess</h2>
-            <p class="card__desc">Team up. Think fast.<br > Win together.</p>
+          <div class="card card--with-icons">
+            <div class="card__icons">
+              <img src="svg\Chess Symbols (15).svg" alt="queen" />
+              <img src="svg\Chess Symbols (16).svg" alt="king" />
+              <img src="svg\Chess Symbols (17).svg" alt="bishop" />
+              <img src="svg\Chess Symbols (15).svg" alt="queen" />
+            </div>
+          
+            <h2 class="card__title">PLAY 2x2 <br> Chess</h2>
+            <p class="card__desc">Team up. Think fast.<br> Win together.</p>
             <button class="card__button">REGISTER TO EVENT</button>
           </div>
 
 
 
         <div class="card__chess">
-          <img src="svg/Chess Symbols (3).svg" alt="" class="figure__chess">
-
-          <div class="cell">&#9820;</div> <!-- rook -->
           <div class="card">
 
             
-            <div class="card__chessboard"></div>
+            <div class="card__chessboard">
+            </div>
+
+
               <div class="chess__wrapper">
                 <h2 class="chess__title">PLAY <br> NOW</h2>
                 <p class="chess__text">REGISTER TO EVENT</p>
@@ -72,14 +79,54 @@
           
   
           <div class="card__pawn card">
-            <p class="card__desc">GET BERY GAME</p>
-            <div class="card__pawn">♙</div>
-            <div class="card__dots">● ● ●</div>
+            <div class="slider">
+              <div class="slide active">
+                <p class="card__desc">GET BERY GAME</p>
+                <img src="figures/white-pawn.svg" alt="pawn" />
+              </div>
+              <div class="slide">
+                <p class="card__desc">JOIN EVENTS</p>
+                <img src="figures/black-rook.svg" alt="rook" />
+              </div>
+              <div class="slide">
+                <p class="card__desc">BECOME MASTER</p>
+                <img src="Chess Symbols (11).svg" alt="king" />
+              </div>
+            </div>
+          
+            <div class="dots">
+              <span class="dot active"></span>
+              <span class="dot"></span>
+              <span class="dot"></span>
+            </div>
+
+
+
           </div>
         </section>
      
     </div>
+
+
+
+
+
+
+
+    <section class="news">
+      <div class="marquee">
+        <div class="marquee__content">
+          <span>CHESS CLUB NEWS ♟ CHESS CLUB NEWS ♟ CHESS CLUB NEWS ♟ </span>
+          <span>CHESS CLUB NEWS ♟ CHESS CLUB NEWS ♟ </span>
+          <span>CHESS CLUB NEWS ♟ CHESS CLUB NEWS ♟ </span>
+        </div>
+      </div>
+    </section>
   </main>
+
+
+
+  <script src="chest.js"></script>
 </body>
 
 </html>
