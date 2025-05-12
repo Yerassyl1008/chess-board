@@ -10,6 +10,8 @@ body {
   font-size: 16px;
   color: #E8CA8A;
   
+
+  /* overflow: hidden; */
 }
 
 
@@ -20,10 +22,10 @@ body {
   border: 18px solid #E8CA8A;
   background-color: #983215;  
 
-  /* background-image: url(Group\ 4\ \(1\).png);
+  background-image: url("imgs/Group 42.png");
   background-repeat: no-repeat;
   background-position: center top; 
-  background-size: cover; */
+  background-size: cover;
 }
 
 
@@ -51,11 +53,9 @@ body {
   width: 60%;
   height: 88px;
   margin-left: auto;
-  
   padding: 12px 18px;
 
   background-color: #983215;
-
   background-image: url(imgs/Group\ 7.png);
   background-repeat: no-repeat;
   background-size: cover;
@@ -108,10 +108,11 @@ body {
   width: 84%;
   margin: 0 auto;
 
-/* 
-  background-image: url(Rectangle\ 24.png);
+
+  /* background-image: url(Rectangle\ 24.png);
   background-size: cover;
-  background-repeat: no-repeat; */
+  background-repeat: no-repeat;
+  background-position: bottom; */
 
 }
 
@@ -138,10 +139,12 @@ body {
   position: absolute;
   top: -48px;
   left: 32%;
-  transform: translateX(-50%);
-
+  
   display: flex;
   gap: 8px;
+  transform: 
+  
+  translateX(-50%);
 }
 
 .card__icons img {
@@ -246,7 +249,7 @@ body {
 
 .card__pawn {
   display: flex;
-  justify-content: end;
+  /* justify-content: end; */
   flex-direction: column;
   height: 618px;
   font-size: 60px;
@@ -338,7 +341,7 @@ body {
 }
 
 
-.card__pawn.card {
+.card__pawn .card {
   display: flex;
   flex-direction: column;
   /* justify-content: space-between; */
@@ -381,26 +384,29 @@ body {
 
 .dots {
   display: flex;
-  gap: 8px;
+  gap: 20px;
   justify-content: center;
   align-items: center;
   /* margin-top: 12px; */
 }
 
 .dot {
-  width: 8px;
-  height: 8px;
-  background-color: #ccc;
+  width: 16px;
+  height: 16px;
+
+  background-color: #E8CA8A;
   border-radius: 50%;
 
   cursor: pointer;
 }
 
 .dot.active {
-  background-color: #fff;
+  background-color: #CA9B41;
 }
 
+.chess__img{
 
+}
 .news{
   height: 100vh;
   padding-right: 18px;
@@ -434,7 +440,26 @@ body {
   
   white-space: nowrap;
   animation: scroll-marquee 60s linear infinite;
+}
 
+
+
+.learnt {
+  height: 100vh;
+
+  background-color: #E8CA8A;
+  background-image: url(imgs/Vector\ 2.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center bottom;
+}
+.learnt__title {
+  font-size: 200px;
+  line-height: 90%;
+  color: #000;
+}
+
+.learnt__span {
 
 }
 
