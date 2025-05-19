@@ -22,10 +22,10 @@ body {
   border: 18px solid #E8CA8A;
   background-color: #983215;  
 
-  background-image: url("imgs/Group 42.png");
+  /* background-image: url("imgs/Group 42.png");
   background-repeat: no-repeat;
   background-position: center top; 
-  background-size: cover;
+  background-size: cover; */
 }
 
 
@@ -99,8 +99,14 @@ body {
 
 
 /* cards */
+.cards__wrapper{
+  position: relative;
+}
+
 
 .cards {
+  position: relative;
+
   display: flex;
   /* justify-content: space-evenly; */
   align-items: flex-end;
@@ -116,13 +122,56 @@ body {
 
 }
 
+.cards__person-img1{
+  position: absolute;
+  top: -98px;
+  left: -8px;
+  z-index: 0;
+  pointer-events: none;
+}
 
+
+.cards__person-img2{
+  position: absolute;
+  top: -184px;
+  left: 300px;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.cards__person-img3{
+  position: absolute;
+  top: -247px;
+  left: 962px;
+  z-index: 0;
+  pointer-events: none;
+
+
+  width: 600px;
+  height: 600px;
+}
+
+.cards__person-img4{
+  position: absolute;
+  top: 366px;
+  left: 200px;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.cards__person-img5{
+  position: absolute;
+  top: 518px;
+  left: 40px;
+  z-index: 0;
+  pointer-events: none;
+}
 .card {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  padding: 12px 18px;
+  padding: 12px 10px;
 
   border: 8px solid #983215;
   border-radius: 12px;
@@ -160,6 +209,7 @@ body {
 }
 
 .card__desc {
+  width: 280px;
   margin-bottom: 12px;
 
   font-size: 24px;
@@ -173,7 +223,7 @@ body {
   align-items: center;
   height: 64px;
   min-width: 120px;
-  padding: 18px 14px;
+  padding: 18px 10px;
 
   font-size: 24px;
   color: #983215;
@@ -474,8 +524,8 @@ body {
 
 
 
+ 
 
+@media (max-width: 1550px) {
 
-@media (max-width: 600px) {
-
-}
+} 
