@@ -5,11 +5,15 @@
 
 
 body {
+  min-width: 100%;
+
+
   font-family: "Nikky", sans-serif;
   font-weight: 400;
   font-size: 16px;
   color: #E8CA8A;
   
+  overflow-x: hidden;
 
   /* overflow: hidden; */
 }
@@ -17,7 +21,7 @@ body {
 
 
 .page__wrapper{
-  min-height: 100vh;
+  /* max-width: 1440px; */
 
   border: 18px solid #E8CA8A;
   background-color: #983215;  
@@ -108,7 +112,7 @@ body {
   position: relative;
 
   display: flex;
-  /* justify-content: space-evenly; */
+  justify-content: space-evenly;
   align-items: flex-end;
   gap: 12px;
   width: 84%;
@@ -142,7 +146,7 @@ body {
 .cards__person-img3{
   position: absolute;
   top: -247px;
-  left: 962px;
+  left: 964px;
   z-index: 0;
   pointer-events: none;
 
@@ -222,7 +226,7 @@ body {
   justify-content: center;
   align-items: center;
   height: 64px;
-  min-width: 120px;
+  width: 286px;
   padding: 18px 10px;
 
   font-size: 24px;
@@ -481,7 +485,10 @@ body {
 }
 
 .marquee__content {
-  display: inline-block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
   
   font-size: 100px;
   font-weight: bold;
@@ -492,7 +499,18 @@ body {
   animation: scroll-marquee 60s linear infinite;
 }
 
+.marquee__content span {
+  display: inline-flex;
+  align-items: center;
+  /* gap: 50px; */
+  margin-right: 80px; /
+}
 
+.infinite__pawn{
+  width: 120px;
+  height: 100px;
+  animation: scroll-marquee 60s linear infinite;
+}
 
 .learnt {
   height: 100vh;
@@ -512,6 +530,42 @@ body {
 .learnt__span {
 
 }
+
+
+.classical {
+  height: 100vh;
+
+  background-color: #983215;
+}
+
+.classical__title {
+  font-size: 200px;
+  text-align: right;
+}
+
+
+
+.red-block {
+  position: relative;
+  background-color: #983215;
+  height: 400px;
+  padding: 40px;
+  color: #E8CA8A;
+}
+
+.beige-shape {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 140px;
+  background-color: #E8CA8A;
+  clip-path: polygon(0 40%, 50% 0%, 70% 0, 70% 100%, 0% 100%);
+  z-index: 1;
+}
+
+
+
 
 @keyframes scroll-marquee {
   0% {

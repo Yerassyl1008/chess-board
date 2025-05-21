@@ -14,6 +14,8 @@ const initialBoard = [
 let selectedPiece = null;
 let originalCell = null;
 
+const fragment = document.createDocumentFragment();
+
 for (let row = 0; row < 8; row++) {
   for (let col = 0; col < 8; col++) {
     const cell = document.createElement("div");
@@ -27,46 +29,43 @@ for (let row = 0; row < 8; row++) {
       piece.classList.add("piece", initialBoard[row][col]);
       piece.draggable = false;
 
-      piece.addEventListener("mousedown", (e) => {
-        selectedPiece = piece;
-        originalCell = cell;
-        piece.style.opacity = "0.5";
-      });
-
       cell.appendChild(piece);
     }
 
-    cell.addEventListener("mouseup", () => {
-      if (selectedPiece) {
-        const targetPiece = cell.querySelector("img");
-
-        if (targetPiece && isSameTeam(selectedPiece, targetPiece)) {
-          selectedPiece.style.opacity = "1";
-          selectedPiece = null;
-          return;
-        }
-
-        if (targetPiece) {
-          targetPiece.remove();
-        }
-
-        cell.appendChild(selectedPiece);
-        selectedPiece.style.opacity = "1";
-        selectedPiece = null;
-      }
-    });
-
-    board.appendChild(cell);
+    fragment.appendChild(cell);
   }
 }
+
+board.appendChild(fragment);
+
+board.addEventListener("mousedown", (e) => {
+  const piece = e.target.closest(".piece");
+  if (!piece) return;
+
+  if (ghost) {
+    ghost.remove();
+    ghost = null;
+  }
+
+  selectedPiece = piece;
+  originalCell = piece.parentElement;
+
+  ghost = piece.cloneNode(true);
+  ghost.style.position = "absolute";
+  ghost.style.pointerEvents = "none";
+  ghost.style.opacity = "0.7";
+  ghost.style.zIndex = "1000";
+  ghost.style.width = piece.offsetWidth + "px";
+  ghost.style.height = piece.offsetHeight + "px";
+  document.body.appendChild(ghost);
+
+  piece.style.opacity = "0.3";
+});
 
 function isSameTeam(piece1, piece2) {
   return piece1.classList[1].startsWith("white") && piece2.classList[1].startsWith("white") ||
          piece1.classList[1].startsWith("black") && piece2.classList[1].startsWith("black");
 }
-
-
-
 
 const slides = document.querySelectorAll(".slide");
 const dots = document.querySelectorAll(".dot");
@@ -80,9 +79,46 @@ function showSlide(index) {
   });
 }
 
-dots.forEach((dot, i) => {
-  dot.addEventListener("click", () => {
-    current = i;
-    showSlide(current);
-  });
+document.querySelector(".dots").addEventListener("click", (e) => {
+  const clickedDot = e.target.closest(".dot");
+  if (!clickedDot) return;
+
+  const index = [...dots].indexOf(clickedDot);
+  if (index === -1) return;
+
+  current = index;
+  showSlide(current);
+});
+
+
+let ghost = null;
+
+document.addEventListener("mouseup", (e) => {
+  if (!selectedPiece || !ghost) return;
+
+  const target = document.elementFromPoint(e.clientX, e.clientY);
+  const targetCell = target?.classList.contains("cell") ? target : target?.closest(".cell");
+
+  if (targetCell && targetCell !== originalCell) {
+    const targetPiece = targetCell.querySelector(".piece");
+
+    if (!targetPiece || !isSameTeam(selectedPiece, targetPiece)) {
+      if (targetPiece) targetPiece.remove();
+
+      if (selectedPiece.parentElement) {
+        selectedPiece.parentElement.removeChild(selectedPiece);
+      }
+
+      targetCell.appendChild(selectedPiece);
+    }
+  } else {
+    originalCell.appendChild(selectedPiece);
+  }
+
+  selectedPiece.style.opacity = "1";
+  selectedPiece = null;
+  originalCell = null;
+
+  ghost.remove();
+  ghost = null;
 });
