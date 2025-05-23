@@ -122,3 +122,34 @@ document.addEventListener("mouseup", (e) => {
   ghost.remove();
   ghost = null;
 });
+
+
+
+
+
+
+
+// rook
+
+
+
+
+const card = document.querySelector('.rook-card');
+const layers = card.querySelectorAll('.layer');
+
+card.addEventListener('mousemove', (e) => {
+  const { left, top, width, height } = card.getBoundingClientRect();
+  const x = e.clientX - left - width / 2;
+  const y = e.clientY - top - height / 2;
+
+  layers.forEach(layer => {
+    const speed = layer.dataset.speed;
+    layer.style.transform = `translate(${x / speed}px, ${y / speed}px)`;
+  });
+});
+
+card.addEventListener('mouseleave', () => {
+  layers.forEach(layer => {
+    layer.style.transform = 'translate(0, 0)';
+  });
+});
