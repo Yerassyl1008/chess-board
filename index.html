@@ -102,17 +102,20 @@
   
           <div class="card__pawn card">
             <div class="slider">
+
               <div class="slide active">
-                <p class="card__desc">GET BERY GAME</p>
-                <!-- <img src="imgs/Chess Symbols (2).png" alt="pawn" class="chess__img"/> -->
-              </div>
-              <div class="slide">
-                <p class="card__desc">JOIN EVENTS</p>
+                <p class="card__slider-desc">GET BERY GAME</p>
                 <img src="imgs/Chess Symbols (2).png" alt="rook" class="chess__img"/>
               </div>
+
               <div class="slide">
-                <p class="card__desc">BECOME MASTER</p>
-                <img src="Chess Symbols (11).svg" alt="king" class="chess__img"/>
+                <p class="card__slider-desc">JOIN EVENTS</p>
+                <img src="imgs/Chess Symbols (2).png" alt="rook" class="chess__img"/>
+              </div>
+
+              <div class="slide">
+                <p class="card__slider-desc">BECOME MASTER</p>
+                <img src="imgs/Chess Symbols (2).png" alt="rook" class="chess__img"/>
               </div>
             </div>
           
@@ -143,9 +146,9 @@
     <section class="news">
       <div class="marquee">
         <div class="marquee__content">
-          <span>CHESS CLUB NEWS <img src="imgs/Chess Symbols (6).png" alt="infinite__pawn" class="infinite__pawn" />
-          </span>
-
+       
+          <span>CHESS CLUB NEWS <img src="imgs/Chess Symbols (6).png" alt="infinite__pawn" class="infinite__pawn" /></span>
+          <span>CHESS CLUB NEWS <img src="imgs/Chess Symbols (6).png" alt="infinite__pawn" class="infinite__pawn" /></span>
           <span>CHESS CLUB NEWS <img src="imgs/Chess Symbols (6).png" alt="infinite__pawn" class="infinite__pawn" /></span>
           <span>CHESS CLUB NEWS <img src="imgs/Chess Symbols (6).png" alt="infinite__pawn" class="infinite__pawn" /></span>
           <span>CHESS CLUB NEWS <img src="imgs/Chess Symbols (6).png" alt="infinite__pawn" class="infinite__pawn" /></span>
@@ -156,18 +159,24 @@
 
 
     <section class="learnt">
-      <h2 class="learnt__title">LEARN TO <br> <span class="learnt__span">PLAY <br> CHESS  </span> </h2>
+      <div class="container">
+        <h2 class="learnt__title">LEARN TO <br> <span class="learnt__span">PLAY <br> CHESS  </span> </h2>
+      </div>
+      
     </section>
 
 
     <section class="classical">
-      <h2 class="classical__title">CLASSICAL CHESS</h2>
+      <div class="container">
+        <h2 class="classical__title">CLASSICAL CHESS</h2>
+      </div>
     </section>
 
 
 
     <section class="scottish">
-      <h2 class="scottish__title">
+      <div class="container">
+         <h2 class="scottish__title">
         PLAY 2V2 <br> SCOTTISH
       </h2>
       <!-- <div class="rook-card">
@@ -185,13 +194,62 @@
           <img src="imgs/Union.png" alt="rook icon" class="card__rook"/>
         </div>
       </div>
+      </div>
     </section>
     
     <section class="play">
-      <h2 class="play__title">play chess960</h2>
+      <div class="container">
+        <h2 class="play__title">play chess960</h2>
+      </div>
     </section>
 
-    
+    <section class="activities">
+      <div class="container">
+        <div class="activities__header-container">
+           <div class="activities__line-top"></div>
+           <div class="activities__header">
+              <button class="activities__button">JOIN OUR ADITIONAL ACTIVITES</button>
+           </div>
+           <div class="activities__line-bottom"></div>
+        </div>
+       
+
+        <div class="activities__content">
+          <div class="activities__map">
+            <img src="imgs/ChatGPT Image 30 апр. 2025 г., 19_48_02 1.png" alt="" class="map">
+          </div>
+          <div class="activities__cards">
+            <div class="activities_card">
+              <p>1 card</p>
+            </div>
+             <div class="activities_card">
+              <p>2 card</p>
+            </div>
+             <div class="activities_card">
+              <p>3 card</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+    </section>
+
+
+   <section class="meeting">
+    <div class="container">
+      <div class="meeting__title">
+        <h2>SCHEDULE<br>A MEETING</h2>
+      </div>
+
+      <form class="meeting__form">
+        <input type="text"  class="meeting__input form" required />
+        <input type="email"  class="meeting__input form" required />
+        <input type="text" class="meeting__input form" required />
+
+        <button type="submit" class="meeting__button">SUBMIT REQUEST</button>
+      </form>
+    </div>
+  </section>
   </main>
   
 

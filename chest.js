@@ -13,6 +13,7 @@ const initialBoard = [
 
 let selectedPiece = null;
 let originalCell = null;
+let ghost = null;
 
 const fragment = document.createDocumentFragment();
 
@@ -37,6 +38,10 @@ for (let row = 0; row < 8; row++) {
 }
 
 board.appendChild(fragment);
+
+
+
+
 
 board.addEventListener("mousedown", (e) => {
   const piece = e.target.closest(".piece");
@@ -91,8 +96,6 @@ document.querySelector(".dots").addEventListener("click", (e) => {
 });
 
 
-let ghost = null;
-
 document.addEventListener("mouseup", (e) => {
   if (!selectedPiece || !ghost) return;
 
@@ -124,6 +127,13 @@ document.addEventListener("mouseup", (e) => {
 });
 
 
+document.addEventListener("mousemove", (e) => {
+  if (ghost) {
+    ghost.style.left = `${e.pageX}px`;
+    ghost.style.top = `${e.pageY}px`;
+  }
+});
+
 
 
 
@@ -134,22 +144,3 @@ document.addEventListener("mouseup", (e) => {
 
 
 
-const card = document.querySelector('.rook-card');
-const layers = card.querySelectorAll('.layer');
-
-card.addEventListener('mousemove', (e) => {
-  const { left, top, width, height } = card.getBoundingClientRect();
-  const x = e.clientX - left - width / 2;
-  const y = e.clientY - top - height / 2;
-
-  layers.forEach(layer => {
-    const speed = layer.dataset.speed;
-    layer.style.transform = `translate(${x / speed}px, ${y / speed}px)`;
-  });
-});
-
-card.addEventListener('mouseleave', () => {
-  layers.forEach(layer => {
-    layer.style.transform = 'translate(0, 0)';
-  });
-});

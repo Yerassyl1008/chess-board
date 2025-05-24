@@ -18,7 +18,12 @@ body {
   /* overflow: hidden; */
 }
 
+.container{
+ padding: 0 18px;
+ margin: 0 auto;
 
+ overflow-x: hidden;
+}
 
 .page__wrapper{
   /* max-width: 1440px; */
@@ -37,9 +42,6 @@ body {
   border: 10px solid black;
 }
 
-.main {
-  
-}
 
 .hero-row{
   display: flex;
@@ -420,8 +422,8 @@ body {
   display: none;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  height: 300px;
+  justify-content: start;
+  height: 100%;
 
   transition: opacity 0.3s ease;
 }
@@ -430,10 +432,16 @@ body {
   display: flex;
 }
 
+.card__slider-desc{
+  font-size: 16px;
+}
+
 .slide img {
-  width: 100px;
+  width: 100%;
   height: auto;
-  /* margin-top: 20px; */
+  max-width: 246px;
+  margin-top: auto; 
+  margin-bottom: 40px;
 }
 
 .dots {
@@ -441,7 +449,7 @@ body {
   gap: 20px;
   justify-content: center;
   align-items: center;
-  /* margin-top: 12px; */
+  margin-bottom: 34px;
 }
 
 .dot {
@@ -458,9 +466,7 @@ body {
   background-color: #CA9B41;
 }
 
-.chess__img{
 
-}
 .news{
   height: 100vh;
   padding-right: 18px;
@@ -507,9 +513,12 @@ body {
 }
 
 .infinite__pawn{
-  width: 120px;
-  height: 100px;
-  animation: scroll-marquee 60s linear infinite;
+  height: 1em; /* подстроится под высоту текста */
+  vertical-align: middle;
+  /* margin: 0 6px; */
+  margin-bottom: 10px;
+  padding-right: 28px;
+  padding-left: 10px;
 }
 
 .learnt {
@@ -527,9 +536,6 @@ body {
   color: #000;
 }
 
-.learnt__span {
-
-}
 
 
 .classical {
@@ -613,6 +619,156 @@ body {
   text-align: right;
   color: #983215;
 }
+
+
+
+.activities {
+  position: relative;
+  /* height: 1000px; */
+  min-height: 100vh;
+
+  background-color: #E8CA8A;
+  
+  overflow: hidden;
+}
+
+.activities__header-container{
+  overflow: hidden;
+}
+
+.activities__header {
+  display: flex;
+  justify-content: center;
+  height: 166px;
+  margin-bottom: 24px;
+
+
+  background-color: #983215;
+}
+
+.activities__button {
+
+  font-size: 70px;
+  text-align: center;
+  color: #251E12;
+
+  /* cursor: default; */
+}
+
+.activities__content {
+  display: flex;
+  gap: 18px;
+  height: calc(100vh - 166px - 48px); /* высота экрана минус шапка и линии */
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.activities__map {
+  position: sticky;
+  top: 0; 
+
+  flex-shrink: 0;
+
+  width: 50%;
+  height: calc(100vh - 166px - 48px); 
+
+  object-fit: cover;
+}
+
+.activities__cards {
+  width: 50%;
+  max-height: calc(100vh - 166px - 48px);
+
+
+  overflow-y: auto;
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  -ms-overflow-style: none; /* IE/Edge */
+
+}
+
+
+.activities__cards::-webkit-scrollbar {
+  display: none;
+}
+
+.activities_card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  height: calc(100vh - 166px - 48px); 
+
+  font-size: 40px;
+  color: white;
+
+  background-color: #983215;
+
+  scroll-snap-align: start;
+
+
+}
+
+.activities__line-top,
+.activities__line-bottom {
+  height: 24px; 
+  
+  background-color: #000; 
+  margin-bottom: 24px;
+}
+
+
+
+.meeting {
+  padding: 60px 18px;
+  
+  background-color: #E8CA8A;
+}
+
+
+
+.meeting__title {
+  margin-bottom: 86px;
+
+  font-size: 100px;
+  color: #fff;
+
+  
+}
+
+.meeting__form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 600px;
+}
+
+.form{
+  width: 604px;
+  height: 60px;
+
+  border: 4px solid #000;
+  border-radius: 12px;
+  background-color: #983215;
+
+}
+
+
+.meeting__button {
+  min-width: 120px;
+  height: 100px;
+  padding: 12px 18px;
+
+  font-size: 36px;
+  color: #983215;
+
+  border: 4px solid #251E12;
+  border-radius: 8px;
+
+}
+
 
 
 @keyframes scroll-marquee {
